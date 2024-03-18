@@ -1,6 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-import logo from '/imgs/logo.jpg';
+import logo from '/imgs/logo.png';
 import bg from '/imgs/bg.jpg';
 
 
@@ -39,6 +39,7 @@ defineProps({
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
         }">
+        
         <div v-if="canLogin" class="sm:fixed sm:top-0 sm:right-0 p-6 text-end">
             <Link v-if="$page.props.auth.user" :href="route('dashboard')"
                 class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
@@ -47,11 +48,11 @@ defineProps({
             <template v-else>
 
                 <Link :href="route('login')"
-                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                    class="font-semibold text-white hover:text-gray-300 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                 登入</Link>
 
                 <Link v-if="canRegister" :href="route('register')"
-                    class="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                    class="ms-4 font-semibold text-white  hover:text-gray-300 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                 註冊</Link>
             </template>
         </div>
@@ -204,9 +205,9 @@ defineProps({
                     </div> -->
                 </div>
             </div>
-            <div class="mt-5 w-2/5">
+            <div class="mt-5 w-2/5 backdrop-blur-xl">
                 <table class="p-5 w-full">
-                    <caption class="text-center text-lg font-bold mb-1">學期課表</caption>
+                    <caption class="border border-gray-800 text-center text-lg font-bold mb-1">學期課表</caption>
                     <thead>
                         <tr>
                             <th class="border border-gray-800 px-4 py-2">序號</th>
@@ -216,14 +217,14 @@ defineProps({
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="border border-gray-800 px-4 py-2">1</td>
-                            <td class="border border-gray-800 px-4 py-2">國文</td>
-                            <td class="border border-gray-800 px-4 py-2">習近平</td>
+                            <td class="border border-gray-800 px-4 py-2 text-center">1</td>
+                            <td class="border border-gray-800 px-4 py-2 text-center">國文</td>
+                            <td class="border border-gray-800 px-4 py-2 text-center">習近平</td>
                         </tr>
                         <tr>
-                            <td class="border border-gray-800 px-4 py-2">2</td>
-                            <td class="border border-gray-800 px-4 py-2">數學</td>
-                            <td class="border border-gray-800 px-4 py-2">達文西</td>
+                            <td class="border border-gray-800 px-4 py-2 text-center">2</td>
+                            <td class="border border-gray-800 px-4 py-2 text-center">數學</td>
+                            <td class="border border-gray-800 px-4 py-2 text-center">達文西</td>
                         </tr>
                     </tbody>
 
@@ -231,13 +232,13 @@ defineProps({
 
             </div>
 
-            <div class="flex justify-center mt-16 px-6 sm:items-center sm:justify-between">
+            <!-- <div class="flex justify-center mt-16 px-6 sm:items-center sm:justify-between">
                 <div class="text-center text-sm sm:text-start">&nbsp;</div>
 
                 <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-end sm:ms-0">
                     Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

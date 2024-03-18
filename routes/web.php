@@ -27,9 +27,17 @@ Route::get('/', function () {
 });
 Route::get('/test', [TestController::class, 'index']);
 
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/teachers', [TestController::class, 'teachers'])->name('teachers');
+
+Route::get('/lessons', [TestController::class, 'lessons'])->name('lessons');
+
+Route::get('/years', [TestController::class, 'years'])->name('years');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
